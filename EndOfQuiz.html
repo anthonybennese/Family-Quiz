@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz Complete!</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: lightblue;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .end-box {
+            background-color: white;
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 0 15px gray;
+            text-align: center;
+            width: 600px;
+            max-width: 90%;
+        }
+
+        h1 {
+            color: darkblue;
+            font-size: 50px;
+        }
+
+        h2 {
+            color: #333;
+        }
+
+        button {
+            background-color: blue;
+            color: white;
+            border: none;
+            padding: 12px 20px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 18px;
+        }
+
+        button:hover {
+            background-color: darkblue;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="end-box">
+        <h1>🏆 Quiz Complete! 🏆</h1>
+
+        <h2>Good Job :)</h2>
+
+        <p>
+            You have finished the Family Quiz.
+        </p>
+
+        <p>
+            Thanks for taking my test
+        </p>
+
+        <button id="restartButton">Play Again</button>
+    </div>
+
+    <script>
+        document.getElementById("restartButton").addEventListener("click", () => {
+            window.location.href = "QuestionOne.html";
+        });
+    </script>
+
+</body>
+</html>

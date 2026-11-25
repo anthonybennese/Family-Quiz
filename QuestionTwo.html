@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+</head>
+
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        background-color: lightblue;
+        display: flex;
+        justify-content: center;
+        margin-top: 50px;
+    }
+
+    .quiz-box {
+        background-color: white;
+        padding: 25px;
+        border-radius: 15px;
+        box-shadow: 0 0 15px gray;
+        width: 500px;
+    }
+
+    h1 {
+        color: darkblue;
+    }
+
+    button {
+        background-color: blue;
+        color: white;
+        border: none;
+        padding: 10px 15px;
+        border-radius: 8px;
+        cursor: pointer;
+    }
+
+    button:hover {
+        background-color: darkblue;
+    }
+
+    #result {
+        font-size: 20px;
+        font-weight: bold;
+    }
+</style>
+
+<body>
+    <div class="quiz-box">
+        <h1>Question 2</h1>
+        <h2>Who's The Best Adult?</h2>
+
+    <input type="radio" id="Adam" name="familyMember" value="Adam">
+        <label for="Adam">Adam</label><br>
+
+        <input type="radio" id="Angela" name="familyMember" value="Angela">
+        <label for="Angela">Beano</label><br>
+
+        <input type="radio" id="Dominick" name="familyMember" value="Dominick">
+        <label for="Dominick">Uncle Beaker</label><br>
+
+        <input type="radio" id="Nana" name="familyMember" value="Nana">
+        <label for="Nana">Nana</label><br>
+
+        <input type="radio" id="Papa" name="familyMember" value="Papa">
+        <label for="Papa">Papa</label><br>
+
+        <input type="radio" id="Anthony" name="familyMember" value="Anthony">
+        <label for="Anthony">Anthony(If he was an adult)</label><br><br>
+
+        <button id="submit">Submit</button>
+
+        <p id="result"></p>
+
+
+        <button id="nextButton" style="display: none"> Next Question</button>
+
+    </div>
+    
+
+    
+
+    
+</body>
+
+<script>
+
+    document.getElementById("submit").addEventListener("click", () => {
+        const selected = document.querySelector('input[name="familyMember"]:checked')
+        const result = document.getElementById("result")
+        const nextButton = document.getElementById("nextButton")
+        const radios = document.querySelectorAll('input[name="familyMember"]')
+
+        if (!selected) {
+            result.textContent = "Pick an answer OWEN!! (I'm guessing its probably Owen who did it)"
+        } 
+        else if (selected.value === "Anthony") {
+            result.textContent = "✅ Correct!"
+            nextButton.style.display = "inline"
+        }
+        else {
+            result.textContent = "❌ Wrong! Answer: Anthony(If he was an adult)"
+            nextButton.style.display = "inline"
+        }
+
+        radios.forEach(radio => {
+            radio.disabled = true
+        }) 
+
+        document.getElementById("submit").disabled = true
+
+        document.getElementById("nextButton").addEventListener("click", () => {
+            window.location.href = "QuestionThree.html"
+
+        })
+    })
+
+</script>
+
+</html>
